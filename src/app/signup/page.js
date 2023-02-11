@@ -7,10 +7,10 @@ export default function Signup() {
         <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen">
           <div className="m-[50px] align-center h-[85%]  from-violet-500 to-fuchsia-500 bg-no-repeat bg-cover">
             <div className="pl-10 invisible lg:visible">
-              <Image src="/logo-white.png" width={100} height={80} />
+              <Image src="/logo-white.png" width={100} height={80} alt="" />
             </div>
             <div className="pl-10 pt-10 invisible lg:visible">
-              <Image src="/prev1.png" width={440} height={440} />
+              <Image src="/prev1.png" width={440} height={440} alt="" />
             </div>
             <div className="lg:text-[24px] mx-[50px] font-semibold text-white">
               App that Covering Banking Needs.
@@ -25,10 +25,13 @@ export default function Signup() {
         </section>
         <section className="w-screen">
           <div className="h-[85%] lg:m-[50px]">
-            <div>
+            <div className="pl-5 pt-10 lg:invisible">
               <Image
-                className="pl-5 pt-10 lg:invisible"
-                // src={require("src/assets/img/logo.png")}
+                className=" pt-10 lg:invisible"
+                src="/logo-blue.png"
+                width={70}
+                height={60}
+                alt=""
               />
             </div>
             <div className="text-center flex pl-5 pt-10 text-[32px] font-bold text-[#3A3D42] lg:hidden lg:h-[0%] ">
