@@ -54,24 +54,13 @@ export default function Signup() {
             <form className=" mt-10 ml-5 mr-5">
               <div className="mb-4">
                 <span className="ml-1 block text-[12px] text-[#858D96]">
-                  First Name
+                  Full Name
                 </span>
                 <input
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
                   placeholder="Enter your First Name"
-                />
-              </div>
-              <div className="mb-4">
-                <span className="ml-1 block text-[12px] text-[#858D96]">
-                  Last Name
-                </span>
-                <input
-                  className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                  placeholder="Enter your Last Name"
                 />
               </div>
               <div className="mb-4">
