@@ -18,7 +18,7 @@ export default function Home() {
               <h1 className="mb-[10px] text-[#FFFFFF] text-[50px]">
                 Rp120.000
               </h1>
-              <h1 className="text-[#FFFFFF]">+6282112801436</h1>
+              <h1 className="text-[#FFFFFF]">+6281393877</h1>
             </div>
             <div>
               <button className="text-white font-bold block w-[100%] border-[1px] px-[30px] py-[10px] rounded mb-[50px] bg-[#6379F426] hover:bg-white hover:text-[#6379F4]">

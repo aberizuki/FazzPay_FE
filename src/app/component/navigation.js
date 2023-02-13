@@ -25,7 +25,7 @@ export default function Navigation() {
             height={20}
             className="mr-[10px]"
           />
-          <Link href="/transferConfirm">
+          <Link href="/transferReceiver">
             <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
               Transfer
             </button>
