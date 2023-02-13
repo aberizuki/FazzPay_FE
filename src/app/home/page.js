@@ -21,10 +21,10 @@ export default function Home() {
               <h1 className="text-[#FFFFFF]">+6282112801436</h1>
             </div>
             <div>
-              <button className="block w-[100%] border-[1px] px-[30px] py-[10px] rounded mb-[50px] bg-[#FFFFFF] opacity-[50%] hover:opacity-[100%]">
+              <button className="text-white font-bold block w-[100%] border-[1px] px-[30px] py-[10px] rounded mb-[50px] bg-[#6379F426] hover:bg-white hover:text-[#6379F4]">
                 Transfer
               </button>
-              <button className="block w-[100%] border-[1px] py-[10px] rounded bg-[#FFFFFF] opacity-[50%] hover:opacity-[100%]">
+              <button className="text-white font-bold block w-[100%] border-[1px] py-[10px] rounded bg-[#6379F426] hover:bg-white hover:text-[#6379F4]">
                 Top Up
               </button>
             </div>
@@ -44,13 +44,89 @@ export default function Home() {
             <div className="bg-white rounded-xl drop-shadow-xl w-[100%]">
               <div className="p-5">
                 <h1>Transaction History</h1>
-                <div className="flex p-[20px]">
-                  <Image src="/user1.png" width={50} height={50} alt="" />
-                  <div className="mx-[10px]">
-                    <h1>Samuel Suhi</h1>
-                    <h2>Accept</h2>
+                <div className="">
+                  <div className="">
+                    <div className="flex p-[20px] items-center justify-between">
+                      <div className="flex items-center">
+                        <Image
+                          className="rounded-xl mr-2"
+                          src="/runrun.png"
+                          width={60}
+                          height={60}
+                          alt=""
+                        />
+                        <div className="mx-[10px]">
+                          <div>Morita Hikaru</div>
+                          <div className="text-[#7A7886] text-[13px]">
+                            Accept
+                          </div>
+                        </div>
+                      </div>
+                      <div className="font-semibold text-[#1EC15F]">
+                        +Rp.50.000
+                      </div>
+                    </div>
+                    <div className="flex p-[20px] items-center justify-between">
+                      <div className="flex items-center">
+                        <Image
+                          className="rounded-xl mr-2"
+                          src="/runrun.png"
+                          width={60}
+                          height={60}
+                          alt=""
+                        />
+                        <div className="mx-[10px]">
+                          <div>Morita Hikaru</div>
+                          <div className="text-[#7A7886] text-[13px]">
+                            Accept
+                          </div>
+                        </div>
+                      </div>
+                      <div className="font-semibold text-[#1EC15F]">
+                        +Rp.50.000
+                      </div>
+                    </div>
+                    <div className="flex p-[20px] items-center justify-between">
+                      <div className="flex items-center">
+                        <Image
+                          className="rounded-xl mr-2"
+                          src="/runrun.png"
+                          width={60}
+                          height={60}
+                          alt=""
+                        />
+                        <div className="mx-[10px]">
+                          <div>Morita Hikaru</div>
+                          <div className="text-[#7A7886] text-[13px]">
+                            Accept
+                          </div>
+                        </div>
+                      </div>
+                      <div className="font-semibold text-[#1EC15F]">
+                        +Rp.50.000
+                      </div>
+                    </div>
+                    <div className="flex p-[20px] items-center justify-between">
+                      <div className="flex items-center">
+                        <Image
+                          className="rounded-xl mr-2"
+                          src="/runrun.png"
+                          width={60}
+                          height={60}
+                          alt=""
+                        />
+                        <div className="mx-[10px]">
+                          <div>Morita Hikaru</div>
+                          <div className="text-[#7A7886] text-[13px]">
+                            Accept
+                          </div>
+                        </div>
+                      </div>
+                      <div className="font-semibold text-[#1EC15F]">
+                        +Rp.50.000
+                      </div>
+                    </div>
                   </div>
-                  <h1>+Rp.50.000</h1>
                 </div>
               </div>
             </div>

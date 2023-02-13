@@ -13,7 +13,9 @@ export default function Navigation() {
             className="mr-[10px]"
           />
           <Link href="/">
-            <button className="">Dashboard</button>
+            <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+              Dashboard
+            </button>
           </Link>
         </div>
         <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
@@ -24,7 +26,9 @@ export default function Navigation() {
             className="mr-[10px]"
           />
           <Link href="/transferConfirm">
-            <button className="">Transfer</button>
+            <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+              Transfer
+            </button>
           </Link>
         </div>
         <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
@@ -34,7 +38,9 @@ export default function Navigation() {
             height={20}
             className="mr-[10px]"
           />
-          <button className="">Top Up</button>
+          <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+            Top Up
+          </button>
         </div>
         <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
           <Image
@@ -44,7 +50,9 @@ export default function Navigation() {
             className="mr-[10px]"
           />
           <Link href="/profile">
-            <button className="">Profile</button>
+            <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+              Profile
+            </button>
           </Link>
         </div>
         <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4] self-end">
@@ -54,7 +62,9 @@ export default function Navigation() {
             height={20}
             className="mr-[10px]"
           />
-          <button className="">Log Out</button>
+          <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+            Log Out
+          </button>
         </div>
       </div>
     </div>

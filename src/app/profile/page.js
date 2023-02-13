@@ -45,12 +45,12 @@ export default function Profile() {
             </div>
             <form>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Full Name
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="text"
                     placeholder="Tamura Hono"
@@ -58,12 +58,12 @@ export default function Profile() {
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Phone
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="phone"
                     type="number"
                     placeholder="+62 813-9387-7946"
@@ -71,12 +71,12 @@ export default function Profile() {
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Verified Email
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="email"
                     placeholder="honotamura@gmail.com"
@@ -84,12 +84,12 @@ export default function Profile() {
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Password
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*********"
@@ -97,12 +97,12 @@ export default function Profile() {
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Re-enter Password
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*********"
@@ -110,12 +110,12 @@ export default function Profile() {
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="">
+                <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Pin
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*****"
