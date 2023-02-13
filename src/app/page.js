@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
-  return <h1 className="text-[200px] font-bold underline">sapnu puas</h1>;
+  return (
+    <>
+      <Link href="/home">
+        <h1 className="text-[200px] font-bold underline">sapnu puas</h1>;
+      </Link>
+    </>
+  );
 }
 
 // const inter = Inter({ subsets: ['latin'] })

@@ -1,28 +1,33 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navigation() {
   return (
     <div className="flex py-5 ">
       <div className="block h-[70%] ">
-        <div className="flex p-[20px] hover:border-l-[1px] border-[blue]">
+        <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
           <Image
             src={"/grid.png"}
             width={20}
             height={20}
             className="mr-[10px]"
           />
-          <button className="">Dashboard</button>
+          <Link href="/">
+            <button className="">Dashboard</button>
+          </Link>
         </div>
-        <div className="flex p-[20px] hover:border-l-[1px] border-[blue]">
+        <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
           <Image
             src={"/arrow-up.png"}
             width={20}
             height={20}
             className="mr-[10px]"
           />
-          <button className="">Transfer</button>
+          <Link href="/transferConfirm">
+            <button className="">Transfer</button>
+          </Link>
         </div>
-        <div className="flex p-[20px] hover:border-l-[1px] border-[blue]">
+        <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
           <Image
             src={"/plus.png"}
             width={20}
@@ -31,16 +36,18 @@ export default function Navigation() {
           />
           <button className="">Top Up</button>
         </div>
-        <div className="flex p-[20px] hover:border-l-[1px] border-[blue]">
+        <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4]">
           <Image
             src={"/user.svg"}
             width={20}
             height={20}
             className="mr-[10px]"
           />
-          <button className="">Profile</button>
+          <Link href="/profile">
+            <button className="">Profile</button>
+          </Link>
         </div>
-        <div className="flex p-[20px] hover:border-l-[1px] border-[blue] self-end">
+        <div className="flex p-[20px] hover:border-l-[5px] border-[#6379F4] self-end">
           <Image
             src={"/log-out.png"}
             width={20}

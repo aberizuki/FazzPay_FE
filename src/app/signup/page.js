@@ -4,7 +4,7 @@ export default function Signup() {
   return (
     <>
       <main className="bg-white h-screen flex h-[1000px]">
-        <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen">
+        <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen h-[850px]">
           <div className="m-[50px] align-center h-[85%]  from-violet-500 to-fuchsia-500 bg-no-repeat bg-cover">
             <div className="pl-10 invisible lg:visible">
               <Image src="/logo-white.png" width={100} height={80} alt="" />
