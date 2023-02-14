@@ -2,6 +2,7 @@ import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Transfer() {
   return (
@@ -29,7 +30,9 @@ export default function Transfer() {
                     alt=""
                   />
                   <div className="mx-[10px]">
-                    <div>Morita Hikaru</div>
+                    <Link href="/transfer">
+                      <button>Morita Hikaru</button>
+                    </Link>
                     <div className="text-[#7A7886] text-[13px]">Accept</div>
                   </div>
                 </div>
@@ -75,6 +78,7 @@ export default function Transfer() {
                   />
                   <div className="mx-[10px]">
                     <div>Morita Hikaru</div>
+
                     <div className="text-[#7A7886] text-[13px]">Accept</div>
                   </div>
                 </div>

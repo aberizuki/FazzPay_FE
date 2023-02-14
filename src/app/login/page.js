@@ -1,10 +1,40 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import React, { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+
 export default function Login() {
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const router = useRouter();
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/api/v1/auth/login",
+      data: loginData,
+    })
+      .then((result) => {
+        localStorage.setItem("@login", JSON.stringify(result.data.data));
+        alert(result.data.message);
+        router.push("/home");
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+      });
+  };
+
   return (
     <>
-      <main className="bg-white h-screen flex h-[900px]">
+      <main className="bg-white h-screen flex">
         <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen">
           <div className="m-[50px] align-center h-[85%]  from-violet-500 to-fuchsia-500 bg-no-repeat bg-cover">
             <div className="pl-10 invisible lg:visible">
@@ -53,12 +83,18 @@ export default function Login() {
               FazzPay wherever you are. Desktop, laptop, mobile phone? <br /> we
               cover all of that for you!
             </div>
-            <form className=" mt-10 ml-5 mr-5">
+            <form onSubmit={handleLogin} className=" mt-10 ml-5 mr-5">
               <div className="mb-4">
                 <span className="ml-1 block text-[12px] text-[#858D96]">
                   Email
                 </span>
                 <input
+                  onChange={(e) => {
+                    setLoginData({
+                      ...loginData,
+                      email: e.target.value,
+                    });
+                  }}
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
@@ -70,6 +106,12 @@ export default function Login() {
                   Password
                 </span>
                 <input
+                  onChange={(e) => {
+                    setLoginData({
+                      ...loginData,
+                      password: e.target.value,
+                    });
+                  }}
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="password"
@@ -91,10 +133,11 @@ export default function Login() {
               </div>
               <div className="flex justify-center m-7">
                 <div className="text-[14px]">Dont have an account? Lets</div>
-
-                <button className="text-[14px] ml-1 text-[#6379F4] font-bold">
-                  Sign up
-                </button>
+                <Link href="/signup">
+                  <button className="text-[14px] ml-1 text-[#6379F4] font-bold">
+                    Sign up
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

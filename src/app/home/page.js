@@ -29,15 +29,15 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="block md:block lg:flex mt-10 justify-between h-[45%]">
+          <div className="block md:block lg:flex mt-10 justify-between h-[53%]">
             <div className="p-5 mr-5  bg-white rounded-xl h-[100%] w-[100%] drop-shadow-xl">
               <div className="block  ">
                 <div className="flex justify-between ">
                   <Image src="/in2.png" width={100} height={100} alt="" />
                   <Image src="/out2.png" width={100} height={100} alt="" />
                 </div>
-                <div className="px-[30px]">
-                  <Image src="/graphic.png" width={250} height={250} alt="" />
+                <div className="flex justify-center mx-[30px] mt-[70px]">
+                  <Image src="/graphic.png" width={300} height={300} alt="" />
                 </div>
               </div>
             </div>

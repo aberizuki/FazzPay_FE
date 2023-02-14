@@ -6,8 +6,11 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Link href="/home">
-        <h1 className="text-[200px] font-bold underline">sapnu puas</h1>;
+      <Link href="/signup">
+        <h1 className="text-[200px] font-bold underline">SIGN UP</h1>;
+      </Link>
+      <Link href="/login">
+        <h1 className="text-[200px] font-bold underline">LOGIN</h1>;
       </Link>
     </>
   );

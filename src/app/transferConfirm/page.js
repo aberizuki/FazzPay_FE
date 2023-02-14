@@ -11,7 +11,7 @@ export default function TransferConfirm() {
         <section className="hidden sm:flex w-[20%] rounded-xl bg-white drop-shadow-xl h-[100vh]">
           <Navigation />
         </section>
-        <section>
+        <section className="">
           <div className="p-5 mr-5  bg-white rounded-xl h-[100%] drop-shadow-lg w-[50vw]">
             <div className="font-bold">Transfer to</div>
             <div className="py-[40px]">

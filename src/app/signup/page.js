@@ -1,10 +1,43 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+
+import React, { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
+  const [signupData, setSignupData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const router = useRouter();
+
+  const handleSignup = (event) => {
+    event.preventDefault();
+    console.log(signupData);
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/api/v1/auth/register",
+      data: signupData,
+    })
+      .then((result) => {
+        setSignupData(result.data.data);
+        alert(result.data.message);
+        router.push("/login");
+        Link;
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+      });
+  };
+
   return (
     <>
-      <main className="bg-white h-screen flex h-[1000px]">
-        <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen h-[850px]">
+      <main className="bg-white h-screen flex">
+        <section className="bg-black invisible w-[0px] bg-hero lg:visible lg:w-screen">
           <div className="m-[50px] align-center h-[85%]  from-violet-500 to-fuchsia-500 bg-no-repeat bg-cover">
             <div className="pl-10 invisible lg:visible">
               <Image src="/logo-white.png" width={100} height={80} alt="" />
@@ -51,12 +84,18 @@ export default function Signup() {
               FazzPay wherever you are. Desktop, laptop, mobile phone? <br /> we
               cover all of that for you!
             </div>
-            <form className=" mt-10 ml-5 mr-5">
+            <form onSubmit={handleSignup} className=" mt-10 ml-5 mr-5">
               <div className="mb-4">
                 <span className="ml-1 block text-[12px] text-[#858D96]">
                   Full Name
                 </span>
                 <input
+                  onChange={(e) => {
+                    setSignupData({
+                      ...signupData,
+                      name: e.target.value,
+                    });
+                  }}
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
@@ -68,6 +107,12 @@ export default function Signup() {
                   Email
                 </span>
                 <input
+                  onChange={(e) => {
+                    setSignupData({
+                      ...signupData,
+                      email: e.target.value,
+                    });
+                  }}
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
@@ -79,6 +124,12 @@ export default function Signup() {
                   Password
                 </span>
                 <input
+                  onChange={(e) => {
+                    setSignupData({
+                      ...signupData,
+                      password: e.target.value,
+                    });
+                  }}
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="password"
@@ -97,9 +148,11 @@ export default function Signup() {
               <div className="flex justify-center m-7">
                 <div className="text-[14px]">Already have an account? Lets</div>
 
-                <button className="text-[14px] ml-1 text-[#6379F4] font-bold">
-                  Login
-                </button>
+                <Link href="/login">
+                  <button className="text-[14px] ml-1 text-[#6379F4] font-bold">
+                    Login
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

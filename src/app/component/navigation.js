@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navigation() {
+  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
+
+  const router = useRouter();
   return (
     <div className="flex py-5 ">
       <div className="block h-[70%] ">
@@ -62,7 +70,14 @@ export default function Navigation() {
             height={20}
             className="mr-[10px]"
           />
-          <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
+          <button
+            onClick={() => {
+              alert("You have been logged out");
+              localStorage.removeItem("@login");
+              router.push("/");
+            }}
+            className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]"
+          >
             Log Out
           </button>
         </div>
