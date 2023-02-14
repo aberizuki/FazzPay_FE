@@ -7,21 +7,51 @@ import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Profile() {
+  const [editData, setEditData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+
+  const router = useRouter();
+
   const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/v1/auth/users/${id}`)
-      .then((result) => {
-        console.log(result.data.data);
-        setUserDetail(result.data.data);
+      .then((res) => {
+        setUserDetail(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  });
+
+  const [changeData, setChangeData] = useState({
+    phone: "",
+  });
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    axios({
+      method: "PATCH",
+      url: `http://localhost:5000/api/v1/auth/users/${id}`,
+      data: changeData,
+    })
+      .then((result) => {
+        alert(result.data.message);
+        router.refresh();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Header />
@@ -61,30 +91,23 @@ export default function Profile() {
                 information, contact our support.
               </div>
             </div>
-            <form>
+            <form onSubmit={handleUpdate}>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
                 <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
                     Full Name
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    onChange={(e) => {
+                      setChangeData({
+                        ...changeData,
+                        name: e.target.value,
+                      });
+                    }}
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="text"
-                    placeholder="Tamura Hono"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
-                <div className="w-[100%]">
-                  <span className="ml-1 block text-[12px] text-[#858D96]">
-                    Phone
-                  </span>
-                  <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
-                    id="phone"
-                    type="number"
-                    placeholder="+62 813-9387-7946"
+                    placeholder={userDetail.name}
                   />
                 </div>
               </div>
@@ -94,20 +117,45 @@ export default function Profile() {
                     Verified Email
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    onChange={(e) => {
+                      setChangeData({
+                        ...changeData,
+                        email: e.target.value,
+                      });
+                    }}
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="email"
-                    placeholder="honotamura@gmail.com"
+                    placeholder={userDetail.email}
                   />
                 </div>
               </div>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
                 <div className="w-[100%]">
                   <span className="ml-1 block text-[12px] text-[#858D96]">
+                    Phone
+                  </span>
+                  <input
+                    onChange={(e) => {
+                      setChangeData({
+                        ...changeData,
+                        phone: e.target.value,
+                      });
+                    }}
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    id="phone"
+                    type="number"
+                    placeholder={userDetail.phone}
+                  />
+                </div>
+              </div>
+              {/* <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
+                <div className="w-[100%]">
+                  <span className="ml-1 block text-[12px] text-[#858D96]">
                     Password
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*********"
@@ -120,7 +168,7 @@ export default function Profile() {
                     Re-enter Password
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*********"
@@ -133,15 +181,18 @@ export default function Profile() {
                     Pin
                   </span>
                   <input
-                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[100%]"
+                    className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-black-[#514F5B] font-semibold leading-tight focus:outline-none focus:shadow-outline w-[100%]"
                     id="name"
                     type="password"
                     placeholder="*****"
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="flex m-10 justify-center">
-                <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[55%] ">
+                <button
+                  type="submit"
+                  className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[55%] "
+                >
                   Confirm
                 </button>
               </div>

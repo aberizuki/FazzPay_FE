@@ -19,6 +19,10 @@ export default function Login() {
       });
   }, []);
 
+  const handleUpdate = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="bg-white p-10 rounded-b-[20px] drop-shadow-xl">
       <div className="flex justify-between w-[100%] px-10">

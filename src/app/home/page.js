@@ -6,10 +6,12 @@ import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import { TopUpModal } from "../component/topup";
 
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
   const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
@@ -45,7 +47,12 @@ export default function Home() {
                   Transfer
                 </button>
               </Link>
-              <button className="text-white font-bold block w-[100%] border-[1px] py-[10px] rounded bg-[#6379F426] hover:bg-white hover:text-[#6379F4]">
+              <button
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                className="text-white font-bold block w-[100%] border-[1px] py-[10px] rounded bg-[#6379F426] hover:bg-white hover:text-[#6379F4]"
+              >
                 Top Up
               </button>
             </div>
@@ -157,6 +164,10 @@ export default function Home() {
         </section>
       </div>
       <Footer />
+      <TopUpModal
+        isVisible={showModal}
+        closeModal={() => setShowModal(false)}
+      />
     </>
   );
 }

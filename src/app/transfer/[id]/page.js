@@ -90,12 +90,12 @@ export default function TransferAmount() {
               <div className="mb-10 flex justify-center w-full">
                 <div className="w-full">
                   <div className="flex justify-center">
-                    <div className="text-[40px]">Rp.</div>
+                    {/* <div className="text-[40px]">Rp.</div> */}
                     <input
                       onChange={(e) => {
                         setTransferData(parseInt(e.target.value));
                       }}
-                      className="h-[50px] bg-white appearance-none border-b-2 w-[40%] text-[40px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex justify-center"
+                      className="h-[50px] bg-white text-center appearance-none border-b-2 w-[40%] text-[40px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex justify-center"
                       id="email"
                       type="number"
                       placeholder="0.00"
