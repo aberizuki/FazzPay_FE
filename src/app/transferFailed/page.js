@@ -2,6 +2,7 @@ import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TransferFailed() {
   return (
@@ -90,12 +91,13 @@ export default function TransferFailed() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex justify-end">
-                <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] ">
-                  Try again
-                </button>
-              </div>
+              <Link href="transfer">
+                <div className="flex justify-end">
+                  <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] ">
+                    Try again
+                  </button>
+                </div>
+              </Link>
             </form>
           </div>
         </section>

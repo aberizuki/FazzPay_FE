@@ -2,6 +2,7 @@ import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TransferSuccess() {
   return (
@@ -93,11 +94,13 @@ export default function TransferSuccess() {
                       Download PDF
                     </button>
                   </div>
-                  <div className="flex mx-4">
-                    <button className="bg-[#6379F4] text-white rounded-lg h-[50px] px-10">
-                      Continue
-                    </button>
-                  </div>
+                  <Link href="/transferReceiver">
+                    <div className="flex mx-4">
+                      <button className="bg-[#6379F4] text-white rounded-lg h-[50px] px-10">
+                        Continue
+                      </button>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </form>

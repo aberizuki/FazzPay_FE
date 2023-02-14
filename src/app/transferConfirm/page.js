@@ -2,6 +2,7 @@ import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TransferConfirm() {
   return (
@@ -81,11 +82,13 @@ export default function TransferConfirm() {
                 </div>
               </div>
 
-              <div className="flex justify-end">
-                <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] ">
-                  Continue
-                </button>
-              </div>
+              <Link href="/transferSuccess">
+                <div className="flex justify-end">
+                  <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] ">
+                    Continue
+                  </button>
+                </div>
+              </Link>
             </form>
           </div>
         </section>
