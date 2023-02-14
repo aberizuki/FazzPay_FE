@@ -19,8 +19,9 @@ export default function Navigation() {
             width={20}
             height={20}
             className="mr-[10px]"
+            alt=""
           />
-          <Link href="/">
+          <Link href="/home">
             <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
               Dashboard
             </button>
@@ -32,8 +33,9 @@ export default function Navigation() {
             width={20}
             height={20}
             className="mr-[10px]"
+            alt=""
           />
-          <Link href="/transferReceiver">
+          <Link href="/transfer">
             <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
               Transfer
             </button>
@@ -45,6 +47,7 @@ export default function Navigation() {
             width={20}
             height={20}
             className="mr-[10px]"
+            alt=""
           />
           <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
             Top Up
@@ -56,6 +59,7 @@ export default function Navigation() {
             width={20}
             height={20}
             className="mr-[10px]"
+            alt=""
           />
           <Link href="/profile">
             <button className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]">
@@ -69,6 +73,7 @@ export default function Navigation() {
             width={20}
             height={20}
             className="mr-[10px]"
+            alt=""
           />
           <button
             onClick={() => {

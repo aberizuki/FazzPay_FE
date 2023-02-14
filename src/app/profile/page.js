@@ -1,9 +1,27 @@
+"use client";
+
+import axios from "axios";
+import Link from "next/link";
 import Navigation from "../component/navigation";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/footer";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 export default function Profile() {
+  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const [userDetail, setUserDetail] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/auth/users/${id}`)
+      .then((result) => {
+        console.log(result.data.data);
+        setUserDetail(result.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <Header />
@@ -16,8 +34,8 @@ export default function Profile() {
             <div className="p-[40px]">
               <div className="flex justify-center">
                 <Image
-                  className=" rounded-xl"
-                  src={"/hono.jpg"}
+                  className=" rounded-full"
+                  src={"/shinjijo.jpg"}
                   width={120}
                   height={120}
                 />
@@ -29,9 +47,9 @@ export default function Profile() {
                 </button>
               </div>
               <div className="mb-[5px]">
-                <h1 className="text-center text-[40px]">Tamura Hono</h1>
+                <h1 className="text-center text-[40px]">{userDetail.name}</h1>
                 <h2 className="text-center text-[#7A7886]">
-                  +62 813-9387-7946
+                  {userDetail.phone}
                 </h2>
               </div>
             </div>

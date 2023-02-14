@@ -1,10 +1,76 @@
-import Navigation from "../component/navigation";
-import Header from "../component/header/Header";
-import Footer from "../component/footer/footer";
+"use client";
+
+import Navigation from "@/app/component/navigation";
+import Header from "@/app/component/header/Header";
+import Footer from "@/app/component/footer/footer";
 import Image from "next/image";
 import Link from "next/link";
 
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { usePathname, useRouter } from "next/navigation";
+
 export default function TransferConfirm() {
+  const segment = usePathname();
+  const router = useRouter();
+
+  const transferDetail = parseInt(localStorage.getItem("@transfer"));
+  // console.log(transferDetail);
+
+  const id = segment.split("/")[3];
+  const [userDetail, setUserDetail] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/auth/users/${id}`)
+      .then((result) => {
+        console.log(result.data.data);
+        setUserDetail(result.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const idl = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const [senderDetail, setSenderDetail] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/auth/users/${idl}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setSenderDetail(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const [transferConfirm, setTransferConfirm] = useState({
+    receiver_id: id,
+    sender_id: idl,
+    amount: transferDetail,
+  });
+
+  console.log(transferConfirm);
+  const handleTransfer = (event) => {
+    event.preventDefault();
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/api/v1/profile/transfer",
+      data: transferConfirm,
+    })
+      .then((result) => {
+        console.log(result.data);
+        localStorage.setItem("@transferConfirm", transferConfirm.amount);
+        localStorage.removeItem("@transfer");
+        router.push(`/transfer/status/${id}`);
+        // router.push(`/home`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Header />
@@ -28,23 +94,23 @@ export default function TransferConfirm() {
                 </div>
                 <div className="px-2">
                   <div className="text-[#3A3D42] font-bold mb-2">
-                    Morita Hikaru
+                    {userDetail.name}
                   </div>
-                  <div className="">+62813938772</div>
+                  <div className="">{userDetail.phone}</div>
                 </div>
               </div>
             </div>
             <div>
               <div className="font-bold mb-7">Details</div>
             </div>
-            <form>
+            <form onSubmit={handleTransfer}>
               <div className="flex justify-between p-[10px] bg-white rounded-lg my-[10px] drop-shadow-md mb-7">
                 <div className="">
                   <span className="ml-1 mb-2 block text-[12px] text-[#858D96]">
                     Amount
                   </span>
                   <div className="font-bold ml-1 text-[#514F5B]">
-                    Rp.100.000
+                    Rp.{transferDetail}
                   </div>
                 </div>
               </div>
@@ -54,7 +120,7 @@ export default function TransferConfirm() {
                     Balance left
                   </span>
                   <div className="font-bold ml-1 text-[#514F5B]">
-                    Rp.1.000.000
+                    Rp.{senderDetail.balance - transferDetail}
                   </div>
                 </div>
               </div>
@@ -82,13 +148,14 @@ export default function TransferConfirm() {
                 </div>
               </div>
 
-              <Link href="/transferSuccess">
-                <div className="flex justify-end">
-                  <button className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] ">
-                    Continue
-                  </button>
-                </div>
-              </Link>
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="bg-[#6379F4] text-white rounded-lg h-[50px] w-[30%] "
+                >
+                  Continue
+                </button>
+              </div>
             </form>
           </div>
         </section>
