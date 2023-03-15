@@ -14,7 +14,7 @@ export default function TransferAmount() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[2];
-  const idl = JSON.parse(Cookies.get("@login"))?.user.id;
+  const idl = Cookies.get("@userId");
   const [userDetail, setUserDetail] = useState([]);
   const [senderDetail, setSenderDetail] = useState([]);
   const [transferData, setTransferData] = useState(0);

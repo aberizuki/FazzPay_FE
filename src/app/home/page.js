@@ -13,7 +13,7 @@ import Cookies from "js-cookie";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-  const id = JSON.parse(Cookies.get("@login"))?.user.id;
+  const id = Cookies.get("@userId");
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios

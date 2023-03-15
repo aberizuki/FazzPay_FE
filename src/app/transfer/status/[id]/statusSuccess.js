@@ -15,9 +15,9 @@ export default function TransferSuccess() {
   const segment = usePathname();
   const router = useRouter();
   const id = segment.split("/")[3];
-  const idl = JSON.parse(Cookies.get("@login"))?.user.id;
+  const idl = Cookies.get("@userId");
   //   console.log(idl);
-  const transferDetail = parseInt(Cookies.get("@transferConfirm"));
+  const transferDetail = Cookies.get("@transferConfirm");
 
   const [userDetail, setUSerDetail] = useState([]);
   useEffect(() => {

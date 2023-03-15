@@ -20,7 +20,7 @@ export default function Profile() {
 
   const router = useRouter();
 
-  const id = JSON.parse(Cookies.get("@login"))?.user.id;
+  const id = Cookies.get("@userId");
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios

@@ -15,7 +15,7 @@ export default function TransferConfirm() {
   const segment = usePathname();
   const router = useRouter();
 
-  const transferDetail = parseInt(Cookies.get("@transfer"));
+  const transferDetail = Cookies.get("@transfer");
   // console.log(transferDetail);
 
   const id = segment.split("/")[3];
@@ -32,7 +32,7 @@ export default function TransferConfirm() {
       });
   }, []);
 
-  const idl = JSON.parse(Cookies.get("@login"))?.user.id;
+  const idl = Cookies.get("@userId");
   const [senderDetail, setSenderDetail] = useState([]);
   useEffect(() => {
     axios

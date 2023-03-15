@@ -23,7 +23,9 @@ export default function Login() {
       data: loginData,
     })
       .then((result) => {
+        console.log(result.data.data);
         Cookies.set("@login", JSON.stringify(result.data.data));
+        Cookies.set("@userId", result.data.data.user.id);
         alert(result.data.message);
         router.push("/home");
       })

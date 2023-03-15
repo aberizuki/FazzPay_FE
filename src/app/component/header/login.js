@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 export default function Login() {
-  const id = JSON.parse(Cookies.get("@login"))?.user.id;
+  const id = Cookies.get("@userId");
   const [dataUser, setDataUser] = useState([]);
   useEffect(() => {
     axios

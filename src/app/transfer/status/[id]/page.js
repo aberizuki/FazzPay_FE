@@ -5,7 +5,7 @@ import TransferFailed from "./statusFailed";
 import Cookies from "js-cookie";
 
 export default function StatusTransfer() {
-  const transferConfirm = typeof JSON.parse(Cookies.get("@transferConfirm"));
+  const transferConfirm = Cookies.get("@transferConfirm");
   const transferStatus = transferConfirm === "number";
-  return <>{transferStatus ? <TransferSuccess /> : <TransferFailed />}</>;
+  return <>{<TransferSuccess />}</>;
 }
