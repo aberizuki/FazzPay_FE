@@ -44,7 +44,7 @@ export default function Login() {
           <div className="px-2">
             <div className="text-[#3A3D42] font-bold">{dataUser?.name}</div>
             <div className="">
-              {dataUser?.phone ? dataUser?.phone : "(phone not inputed yet)"}
+              {dataUser?.phone ? dataUser?.phone : "No phone registered"}
             </div>
           </div>
           <div className="px-2">

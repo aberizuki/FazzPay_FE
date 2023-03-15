@@ -105,14 +105,14 @@ export default function Home() {
                             alt=""
                           />
                           <div className="mx-[10px]">
-                            <div>Morita Hikaru</div>
+                            <div>Tamura Hono</div>
                             <div className="text-[#7A7886] text-[13px]">
                               Accept
                             </div>
                           </div>
                         </div>
                         <div className="font-semibold text-[#1EC15F]">
-                          +Rp.50.000
+                          +Rp.150.000
                         </div>
                       </div>
                       <div className="flex p-[20px] items-center justify-between">
@@ -125,14 +125,14 @@ export default function Home() {
                             alt=""
                           />
                           <div className="mx-[10px]">
-                            <div>Morita Hikaru</div>
+                            <div>Fujiyoshi Karin</div>
                             <div className="text-[#7A7886] text-[13px]">
                               Accept
                             </div>
                           </div>
                         </div>
-                        <div className="font-semibold text-[#1EC15F]">
-                          +Rp.50.000
+                        <div className="font-semibold text-[#FF5B37]">
+                          -Rp.40.000
                         </div>
                       </div>
                       <div className="flex p-[20px] items-center justify-between">
@@ -145,14 +145,14 @@ export default function Home() {
                             alt=""
                           />
                           <div className="mx-[10px]">
-                            <div>Morita Hikaru</div>
+                            <div>Yamasaki Ten</div>
                             <div className="text-[#7A7886] text-[13px]">
                               Accept
                             </div>
                           </div>
                         </div>
                         <div className="font-semibold text-[#1EC15F]">
-                          +Rp.50.000
+                          +Rp.100.000
                         </div>
                       </div>
                     </div>

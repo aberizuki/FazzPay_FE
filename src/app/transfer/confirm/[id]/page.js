@@ -139,7 +139,8 @@ export default function TransferConfirm() {
                   <span className="ml-1 mb-2 block text-[12px] text-[#858D96]">
                     Notes
                   </span>
-                  <input
+
+                  <div
                     className="h-[50px] bg-white appearance-none w-full pt-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[40vw]"
                     id="phone"
                     type="text"

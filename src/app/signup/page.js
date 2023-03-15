@@ -99,7 +99,7 @@ export default function Signup() {
                   className="h-[50px] bg-white appearance-none border-b-2 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="text"
-                  placeholder="Enter your First Name"
+                  placeholder="Enter your Name"
                 />
               </div>
               <div className="mb-4">

@@ -59,7 +59,7 @@ export default function Transfer() {
                           <div>{index.name}</div>
 
                           <div className="text-[#7A7886] text-[13px]">
-                            {index.phone ? index.phone : "Phone not filled yet"}
+                            {index.phone ? index.phone : "No phone registered"}
                           </div>
                         </div>
                       </div>
