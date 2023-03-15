@@ -1,7 +1,7 @@
 "use client";
 
 import Navigation from "@/app/component/navigation";
-import Header from "@/app/component/header/Header";
+import Header from "@/app/component/header/header";
 import Footer from "@/app/component/footer/footer";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import Header from "./component/header/Header";
+// import Header from "./component/header/header";
 import Footer from "./component/footer/footer";
 import Link from "next/link";
 
