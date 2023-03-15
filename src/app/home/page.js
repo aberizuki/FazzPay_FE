@@ -9,10 +9,11 @@ import Image from "next/image";
 import { TopUpModal } from "../component/topup";
 
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const id = JSON.parse(Cookies.get("@login"))?.user.id;
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios

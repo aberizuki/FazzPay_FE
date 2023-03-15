@@ -6,10 +6,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { TopUpModal } from "./topup";
+import Cookies from "js-cookie";
 
 export default function Navigation() {
   const [showModal, setShowModal] = useState(false);
-  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const id = JSON.parse(Cookies.get("@login"))?.user.id;
 
   const router = useRouter();
   return (
@@ -88,7 +89,7 @@ export default function Navigation() {
             <button
               onClick={() => {
                 alert("You have been logged out");
-                localStorage.removeItem("@login");
+                Cookies.remove("@login");
                 router.push("/");
               }}
               className="hover:text-[#6379F4] hover:font-bold click:font-bold click:text-[#6379F4]"

@@ -9,12 +9,13 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 export default function TransferConfirm() {
   const segment = usePathname();
   const router = useRouter();
 
-  const transferDetail = parseInt(localStorage.getItem("@transfer"));
+  const transferDetail = parseInt(Cookies.get("@transfer"));
   // console.log(transferDetail);
 
   const id = segment.split("/")[3];
@@ -31,7 +32,7 @@ export default function TransferConfirm() {
       });
   }, []);
 
-  const idl = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const idl = JSON.parse(Cookies.get("@login"))?.user.id;
   const [senderDetail, setSenderDetail] = useState([]);
   useEffect(() => {
     axios
@@ -61,8 +62,8 @@ export default function TransferConfirm() {
     })
       .then((result) => {
         console.log(result.data);
-        localStorage.setItem("@transferConfirm", transferConfirm.amount);
-        localStorage.removeItem("@transfer");
+        Cookies.set("@transferConfirm", transferConfirm.amount);
+        Cookies.remove("@transfer");
         router.push(`/transfer/status/${id}`);
         // router.push(`/home`);
       })

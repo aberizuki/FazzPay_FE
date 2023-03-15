@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import Cookies from "js-cookie";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -23,7 +23,7 @@ export default function Login() {
       data: loginData,
     })
       .then((result) => {
-        localStorage.setItem("@login", JSON.stringify(result.data.data));
+        Cookies.set("@login", JSON.stringify(result.data.data));
         alert(result.data.message);
         router.push("/home");
       })

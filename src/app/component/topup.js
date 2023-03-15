@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 export const TopUpModal = ({ isVisible, closeModal }) => {
   const router = useRouter();
-  const id = JSON.parse(localStorage.getItem("@login"))?.user.id;
+  const id = JSON.parse(Cookies.get("@login"))?.user.id;
   const [topUpData, setTopUpData] = useState({
     balance: 0,
   });
