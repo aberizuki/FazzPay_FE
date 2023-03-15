@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/app/component/header/Header";
+import Header from "@/app/component/header/header";
 import Navigation from "@/app/component/navigation";
 import Footer from "@/app/component/footer/footer";
 
