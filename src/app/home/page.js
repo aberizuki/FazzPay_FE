@@ -17,7 +17,9 @@ export default function Home() {
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users/${id}`)
+      .get(
+        `https://fazzpaybe-production.up.railway.app/api/v1/auth/users/${id}`
+      )
       .then((result) => {
         console.log(result.data.data);
         setUserDetail(result.data.data);

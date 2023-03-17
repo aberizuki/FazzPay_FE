@@ -22,7 +22,9 @@ export default function TransferConfirm() {
   const [userDetail, setUserDetail] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users/${id}`)
+      .get(
+        `https://fazzpaybe-production.up.railway.app/api/v1/auth/users/${id}`
+      )
       .then((result) => {
         console.log(result.data.data);
         setUserDetail(result.data.data);
@@ -36,7 +38,9 @@ export default function TransferConfirm() {
   const [senderDetail, setSenderDetail] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users/${idl}`)
+      .get(
+        `https://fazzpaybe-production.up.railway.app/api/v1/auth/users/${idl}`
+      )
       .then((res) => {
         console.log(res.data.data);
         setSenderDetail(res.data.data);
@@ -57,7 +61,7 @@ export default function TransferConfirm() {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:5000/api/v1/profile/transfer",
+      url: "https://fazzpaybe-production.up.railway.app/api/v1/profile/transfer",
       data: transferConfirm,
     })
       .then((result) => {

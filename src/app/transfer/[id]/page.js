@@ -21,7 +21,9 @@ export default function TransferAmount() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users/${id}`)
+      .get(
+        `https://fazzpaybe-production.up.railway.app/api/v1/auth/users/${id}`
+      )
       .then((result) => {
         console.log(result.data.data);
         setUserDetail(result.data.data);
@@ -33,7 +35,9 @@ export default function TransferAmount() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users/${idl}`)
+      .get(
+        `https://fazzpaybe-production.up.railway.app/api/v1/auth/users/${idl}`
+      )
       .then((res) => {
         console.log(res.data.data);
         setSenderDetail(res.data.data);

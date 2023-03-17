@@ -15,7 +15,7 @@ export const TopUpModal = ({ isVisible, closeModal }) => {
     event.preventDefault();
     axios({
       method: "PATCH",
-      url: `http://localhost:5000/api/v1/users/${id}`,
+      url: `https://fazzpaybe-production.up.railway.app/api/v1/users/${id}`,
       data: topUpData,
     })
       .then((result) => {

@@ -19,7 +19,7 @@ export default function Login() {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:5000/api/v1/auth/login",
+      url: "https://fazzpaybe-production.up.railway.app/api/v1/auth/login",
       data: loginData,
     })
       .then((result) => {

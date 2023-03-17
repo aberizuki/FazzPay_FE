@@ -14,7 +14,7 @@ export default function Transfer() {
   const [userData, setUserData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/auth/users`)
+      .get(`https://fazzpaybe-production.up.railway.app/api/v1/auth/users`)
       .then((result) => {
         console.log(result.data.data);
         setUserData(result.data.data);
