@@ -102,7 +102,7 @@ export default function Home() {
                         <div className="flex items-center">
                           <Image
                             className="rounded-xl mr-2"
-                            src="/runrun.png"
+                            src="/hono.jpg"
                             width={60}
                             height={60}
                             alt=""
@@ -122,13 +122,13 @@ export default function Home() {
                         <div className="flex items-center">
                           <Image
                             className="rounded-xl mr-2"
-                            src="/runrun.png"
+                            src="/ten.jpg"
                             width={60}
                             height={60}
                             alt=""
                           />
                           <div className="mx-[10px]">
-                            <div>Fujiyoshi Karin</div>
+                            <div>Yamasaki Ten</div>
                             <div className="text-[#7A7886] text-[13px]">
                               Accept
                             </div>
@@ -142,7 +142,7 @@ export default function Home() {
                         <div className="flex items-center">
                           <Image
                             className="rounded-xl mr-2"
-                            src="/runrun.png"
+                            src="/ten.jpg"
                             width={60}
                             height={60}
                             alt=""
